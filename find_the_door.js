@@ -4,6 +4,13 @@ var c = canvas.getContext("2d");
 canvas.width = window.innerHeight;
 canvas.height = window.innerHeight;
 
+var menu = document.getElementById("menu");
+
+console.log(window.innerWidth - canvas.height)
+
+menu.style.width = (window.innerWidth - canvas.height - 30) + "px";
+canvas.style.width = canvas.width;
+
 // Handle key input
 var KeyHandler = {
   init: function() {
