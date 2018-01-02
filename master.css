@@ -1,0 +1,14 @@
+/**
+ * Stylesheet
+ */
+html,
+body {
+ margin: auto;
+ background-color: #5CB3FF;
+}
+
+canvas {
+ margin: auto;
+ padding: 0px;
+ display: block;
+}

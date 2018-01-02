@@ -6,71 +6,36 @@
   <title>Find The Door</title>
 
   <link href="https://fonts.googleapis.com/css?family=Pompiere|Faster+One" rel="stylesheet">
-  <style type="text/css" media="screen">
-    * {
-      box-sizing: border-box;
+  <link rel="stylesheet" href="./master.css">
+  <script type="text/javascript">
+  // Utils
+  function r(n) {
+    if (n) {
+      return parseInt(Math.random() * n);
+    } else {
+      return parseInt(Math.random() * 255);
     }
+  }
 
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #5CB3FF;
-    }
+  function intersectRect(r1, r2) {
+    return !(r2.x > r1.x + r1.size ||
+      r2.x + r2.size < r1.x ||
+      r2.y > r1.y + r1.size ||
+      r2.y + r2.size < r1.y);
+  }
 
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    .col {
-      float: left;
-      position: relative;
-    }
-
-    #menu {
-      color: white;
-    }
-
-    #menu h1,
-    #menu h5 {
-      margin: 25px;
-      text-align: center;
-      font-family: "Faster One";
-    }
-
-    #menu h1 {
-      letter-spacing: 100px;
-      font-size: 5em;
-    }
-
-    #menu h5 {
-      letter-spacing: 50px;
-      color: #FFA85C;
-    }
-
-    #menu p {
-      margin: 150px 50px 0px;
-      text-align: left;
-      font-size: 2em;
-      font-family: "Pompiere";
-    }
-  </style>
+  </script>
 </head>
 
 <body>
-  <div class="row">
-    <canvas id="canvas" class="col"></canvas>
-    <div id="menu" class="col">
-      <h1>Find</h1>
-      <h5>the</h5>
-      <h1>Door</h1>
-      <p>Use the arrow keys to move the red square. One of the colored tiles is a magical door. Once found, it will flash vibrantly and regenerate a new map... with more tiles!</p>
-      <p>More features coming soon!</p>
-    </div>
-  </div>
-  <script src="./find_the_door.js" type="text/javascript" charset="utf-8"></script>
+  <canvas id="canvas" class="col"></canvas>
+  <script src="./KeyHandler.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./Player.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./Block.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./Particle.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./MapGen.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./Testing.js" type="text/javascript" charset="utf-8"></script>
+  <!-- <script src="./find_the_door.js" type="text/javascript" charset="utf-8"></script> -->
 </body>
 
 </html>
