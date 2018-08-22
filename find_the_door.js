@@ -30,6 +30,10 @@ var KeyHandler = {
 
 KeyHandler.init();
 
+var joystick = new VirtualJoystick({container: document.getElementById('body'),
+                                    mouseSupport: true,
+                                    limitStickTravel: true})
+
 // Objects
 var Player = {
   x: 100,
@@ -41,19 +45,19 @@ var Player = {
   update: function() {
 
     // Left
-    if (KeyHandler.pressed[37]) {
+    if (KeyHandler.pressed[37] || joystick.left()) {
       this.x -= this.vx;
     }
     // Up
-    if (KeyHandler.pressed[38]) {
+    if (KeyHandler.pressed[38] || joystick.up()) {
       this.y -= this.vy;
     }
     // Right
-    if (KeyHandler.pressed[39]) {
+    if (KeyHandler.pressed[39] || joystick.right()) {
       this.x += this.vx;
     }
     // Down
-    if (KeyHandler.pressed[40]) {
+    if (KeyHandler.pressed[40] || joystick.down()) {
       this.y += this.vy;
     }
 
